@@ -35,7 +35,7 @@ class CAMWrapper:
     def attribute(self, x, target=None):
         cam = methods[self.method_name](model=self.model,
                                 target_layers=self.target_layers,
-                                use_cuda=True,
+                                # use_cuda=True,
                                 reshape_transform=reshape_transform)
 
         grayscale_cam = cam(input_tensor=x,
