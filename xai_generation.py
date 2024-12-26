@@ -118,13 +118,14 @@ def main():
         print('Method checkpoint loaded.')
 
     else:
+        print("[DEBUG] number of imgs: ", len(val_loader))
         for X, y in tqdm(val_loader, total=len(val_loader), desc=f'Generating saliency maps using {args.method}'):
             if args.gpu:
                 X = X.cuda()
                 y = y.cuda()
 
             # One image at a time since some methods process each image multiple times using internal batches
-            for i in range(X.shape[0]):
+            for i in range(X.shape[0]): 
                 # generate saliency map depending on the choosen method (sum over channels for gradient methods)
                 if args.method in ['scorecam', 'gradcam', 'gradcam++']:
                     saliency_map = method.attribute(X[i].unsqueeze(0), target=y[i])
