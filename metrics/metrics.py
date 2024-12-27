@@ -8,7 +8,17 @@ import quantus
 from .hyper_parameters_metrics import get_hyper_param_eval
 from .meta_parameters_metrics import meta_param
 
-def get_results(model,name =  "Faithfulness Correlation", x_batch = None, y_batch = None, a_batch = None, perturb_baseline = None, xai_method = None, device = "cuda"):
+def get_results(
+        model,
+        name =  "Faithfulness Correlation", 
+        x_batch = None, 
+        y_batch = None, 
+        a_batch = None, 
+        s_batch = None,
+        perturb_baseline = None, 
+        xai_method = None, 
+        device = "cuda",
+        ):
 
     metric = {
     #Faithfullness
@@ -76,4 +86,5 @@ def get_results(model,name =  "Faithfulness Correlation", x_batch = None, y_batc
                                         x_batch=x_batch.cpu().numpy(),
                                         y_batch=y_batch.cpu().numpy(),
                                         a_batch=a_batch.detach().cpu().numpy(),
+                                        s_batch = s_batch
                                         **meta_params)
