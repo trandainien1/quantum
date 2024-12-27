@@ -82,7 +82,7 @@ def get_results(
         
     # Compute and return the metric
     print()
-    print('[DEBUG] metric parameters: ', hyper_params)
+    # print('[DEBUG] metric parameters: ', hyper_params)
     return metric[name](**hyper_params)(model=model,
                                         x_batch=x_batch.cpu().numpy(),
                                         y_batch=y_batch.cpu().numpy(),
