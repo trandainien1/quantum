@@ -14,7 +14,6 @@ def get_results(
         x_batch = None, 
         y_batch = None, 
         a_batch = None, 
-        s_batch = None,
         perturb_baseline = None, 
         xai_method = None, 
         device = "cuda",
@@ -82,9 +81,9 @@ def get_results(
         meta_params["explain_func"] = xai_method
         
     # Compute and return the metric
+    print('[DEBUG] metric parameters: ', metric[name].get_params)
     return metric[name](**hyper_params)(model=model,
                                         x_batch=x_batch.cpu().numpy(),
                                         y_batch=y_batch.cpu().numpy(),
                                         a_batch=a_batch.detach().cpu().numpy(),
-                                        s_batch = s_batch
                                         **meta_params)

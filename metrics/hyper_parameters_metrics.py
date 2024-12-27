@@ -90,7 +90,9 @@ def get_hyper_param_eval(img_size=224, num_classes=1000):
         'Relevance Mass Accuracy': {},
         'Relevance Mass Ranking': {},
         'Attribution Localisation':{},
-        'AUC':{},
+        'AUC':{
+            
+        },
         #Randomisation
         'Model Parameter Randomisation':{
             'layer_order': 'top_down',
