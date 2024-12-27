@@ -5,6 +5,7 @@ import torch
 from PIL import Image
 from matplotlib import cm
 
+print('[DEBUG] cam_wrapper.py')
 try:
     from .grad_cam.pytorch_grad_cam.grad_cam import GradCAM
     from .grad_cam.pytorch_grad_cam.score_cam import ScoreCAM
