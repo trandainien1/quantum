@@ -228,7 +228,7 @@ def main():
             csv_name = args.method + '_' + args.model + '_' + args.dataset_name + '_' + args.metrics + csv_baseline_suffix + subset_suffix + '.csv'
         scores_df.to_csv(os.path.join(args.csv_folder, csv_name), header=False, index=False)
 
-        with open(os.path.join('results', csv_name), 'w') as f:
+        with open(os.path.join('csv', csv_name), 'w') as f:
             f.write(f'{datetime.timedelta(seconds=(end_metric-start_metric)/2000)}')
 
 def XAI_for_Quantus(model, inputs, targets, device, batch_size=1, img_shape = [3, 224,224], **kwargs):
