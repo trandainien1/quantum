@@ -6,7 +6,6 @@ from PIL import Image
 from matplotlib import cm
 
 try:
-    
     from .grad_cam.pytorch_grad_cam.grad_cam import GradCAM
     from .grad_cam.pytorch_grad_cam.score_cam import ScoreCAM
     from .grad_cam.pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
@@ -36,7 +35,7 @@ class CAMWrapper:
     def attribute(self, x, target=None):
         cam = methods[self.method_name](model=self.model,
                                 target_layers=self.target_layers,
-                                # use_cuda=True,
+                                use_cuda=True,
                                 reshape_transform=reshape_transform)
 
         grayscale_cam = cam(input_tensor=x,
