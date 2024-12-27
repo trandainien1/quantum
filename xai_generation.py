@@ -171,6 +171,7 @@ def main():
     else:
         subset_suffix = ''
     xai_loader = torch.utils.data.DataLoader(xai_dataset, batch_size=batch_size, shuffle = False)
+    print('[DEBUG] num of heatmaps: ', len(xai_loader))
 
     #Defining XAI_method for robustness and randomisation
     if args.metrics in metric_types['robustness'] or args.metrics in metric_types['randomisation']:
