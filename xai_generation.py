@@ -76,6 +76,7 @@ def main():
 
     # Get dataset
     dataset, n_output = get_dataset(args.dataset_name, args.dataset_root)
+    print('[DEBUG]: ', n_output)
     global upsampling_fn 
     upsampling_fn = Resize(dataset[0][0].shape[-2:], antialias=True)
 
