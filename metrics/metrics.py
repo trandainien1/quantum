@@ -81,7 +81,7 @@ def get_results(
         meta_params["explain_func"] = xai_method
         
     # Compute and return the metric
-    print('[DEBUG] metric parameters: ', metric[name].get_params)
+    print('[DEBUG] metric parameters: ', hyper_params)
     return metric[name](**hyper_params)(model=model,
                                         x_batch=x_batch.cpu().numpy(),
                                         y_batch=y_batch.cpu().numpy(),
