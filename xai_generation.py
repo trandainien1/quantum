@@ -58,7 +58,10 @@ parser.set_defaults(save_npz=False)
 parser.set_defaults(skip_metrics=False)
 parser.set_defaults(gpu=True)
 
+print('[DEBUG] HELLO')
+
 def main():
+    print('[DEBUG] HELLO FROM MAIN')
 
     print('[XAI]')
     global args
