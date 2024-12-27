@@ -102,7 +102,9 @@ def main():
         subset_indices  = np.random.randint(0, high=(len(dataset)-1), size=min(args.limit_val, len(dataset)))
         subset = torch.utils.data.Subset(dataset, subset_indices)
         print(f'Dataset limited to {args.limit_val} images.')
+        print('[DEBUG] whole dataset: False')
     else:
+        print('[DEBUG] whole dataset: True')
         subset = dataset
 
     # Get dataloader for generating the maps
