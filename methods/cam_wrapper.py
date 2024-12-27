@@ -16,8 +16,8 @@ except:
 
 import numpy as np
 
-from pytorch_grad_cam.base_cam import BaseCAM
-
+# from pytorch_grad_cam.base_cam import BaseCAM
+from .grad_cam.pytorch_grad_cam.base_cam import BaseCAM
 
 class GradCAM(BaseCAM):
     def __init__(self, model, target_layers,
