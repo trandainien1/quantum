@@ -95,6 +95,7 @@ def main():
     if args.npz_checkpoint:
         method = None
     else:
+        print('[DEBUG] Method: ', args.method)
         method=get_method(name=args.method, model=model, batch_size=args.batch_size, dataset_name=args.dataset_name)
         print('Method loaded.')
 
