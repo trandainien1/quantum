@@ -886,7 +886,7 @@ class AUC(Metric):
         x_batch: np.array,
         y_batch: np.array,
         a_batch: Union[np.array, None],
-        s_batch: Union[np.array, None],
+        s_batch: Union[np.array, None] ,
         *args,
         **kwargs
     ) -> List[float]:
